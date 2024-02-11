@@ -70,6 +70,7 @@ int main()
 	Player.name = "Jessica";
 	Character Janette;
 	Janette.name = "Janette";
+	Janette.type = ct_npc;
 
 	Player.Talk(&Janette);
 	Janette.Talk(&Player, "Hi, " + Player.name + "!\n");

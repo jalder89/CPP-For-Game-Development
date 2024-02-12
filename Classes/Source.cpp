@@ -106,7 +106,6 @@ public:
 	void Greeting(Character* Player)
 	{
 		state = talking;
-
 		cout << this->name << ": " << "Hey, " + Player->name + "!\n";
 		state = idle;
 	}

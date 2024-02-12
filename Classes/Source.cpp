@@ -83,16 +83,11 @@ public:
 	}
 };
 
-class PlayerClass : public Character
+class Player_Class : public Character
 {
 public:
-	PlayerClass()
-	{
-		type = ct_player;
-		name = "Player";
-		occupation = "Withc";
-		strength = 6;
-	}
+	Player_Class();
+	Player_Class(string newName, string newOccupation, int newStrength);
 
 	void Greeting(Character* participant)
 	{
@@ -102,22 +97,16 @@ public:
 	}
 };
 
-class JanetteClass : public Character
+class NPC_Class : public Character
 {
 public:
-	JanetteClass()
-	{
-		type = ct_npc;
-		name = "Janette";
-		occupation = "Rave Girl";
-		strength = 4;
+	NPC_Class();
+	NPC_Class(string newName, string newOccupation, int newStrength);
 
-	}
-		
 	void Greeting(Character* Player)
 	{
-		
 		state = talking;
+
 		cout << this->name << ": " << "Hey, " + Player->name + "!\n";
 		state = idle;
 	}
@@ -126,8 +115,8 @@ public:
 int main()
 {
 	Maker Make;
-	PlayerClass Player;
-	JanetteClass Janette;
+	Player_Class Player("Jessica", "Witch", 6);
+	NPC_Class Janette("Janette", "Rave Girl", 4);
 	
 	Make.Border();
 	Player.Greeting(&Janette);
@@ -142,4 +131,34 @@ int main()
 
 	Make.Border();
 	system("pause");
+}
+
+Player_Class::Player_Class()
+{
+	type = ct_player;
+	name = "Player";
+	occupation = "Witch";
+	strength = 6;
+}
+
+Player_Class::Player_Class(string newName, string newOccupation, int newStrength)
+{
+	name = newName;
+	occupation = newOccupation;
+	strength = newStrength;
+}
+
+NPC_Class::NPC_Class()
+{
+	type = ct_npc;
+	name = "NPC";
+	occupation = "NPC Worker";
+	strength = 4;
+}
+
+NPC_Class::NPC_Class(string newName, string newOccupation, int newStrength)
+{
+	name = newName;
+	occupation = newOccupation;
+	strength = newStrength;
 }

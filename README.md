@@ -23,3 +23,8 @@ Projects and exercise work for learning C++ for Game Development.
   Practice with classes and inheritence in the shape of a player and npc interaction. 
   * Character, Player, and NPC classes defined to facilitate character interactions.
   * Maker class implemented to provide a simple function for creating dividers in the console.
+
+  ### Access Modifiers
+  Practice with access modifiers and classes.
+  * Implemented Creature and Kobold class.
+  * Implemented different public, private, and protected member variables and functions for each class.

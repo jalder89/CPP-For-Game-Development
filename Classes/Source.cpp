@@ -5,10 +5,7 @@ class Maker
 {
 	char divider;
 public:
-	Maker()
-	{
-		divider = '-';
-	}
+	Maker();
 
 	void Border()
 	{
@@ -40,23 +37,12 @@ public:
 	enum CharacterState
 	{
 		idle,
+		sitting,
 		walking,
 		running,
 		talking,
 		attacking
 	};
-
-	Character()
-	{
-		type = ct_player;
-		name = "Character";
-		occupation = "Witch";
-		health = 100;
-		strength = 5;
-		level = 1;
-		state = idle;
-	}
-
 	CharacterType type;
 	CharacterState state;
 	string name;
@@ -64,6 +50,22 @@ public:
 	int health;
 	int level;
 	int strength;
+
+	Character();
+
+	void Greeting(Character* participant)
+	{
+		state = talking;
+		cout << this->name << ": " << "Hey, " + participant->name + "!\n";
+		state = idle;
+	}
+
+	void Talk(string message)
+	{
+		state = talking;
+		cout << message << endl;
+		state = idle;
+	}
 
 	void Talk(Character* participant, string message)
 	{
@@ -81,14 +83,19 @@ public:
 		cout << target->name << " has " << target->health << " health left!" << endl;
 		state = idle;
 	}
+
+	void Sit()
+	{
+		state = sitting;
+		cout << this->name << " decided to sit down." << endl;
+	}
 };
 
 class Player_Class : public Character
 {
 public:
-	Player_Class();
 	Player_Class(string newName, string newOccupation, int newStrength);
-
+	
 	void Greeting(Character* participant)
 	{
 		state = talking;
@@ -100,14 +107,11 @@ public:
 class NPC_Class : public Character
 {
 public:
-	NPC_Class();
 	NPC_Class(string newName, string newOccupation, int newStrength);
 
-	void Greeting(Character* Player)
+	void Respawn()
 	{
-		state = talking;
-		cout << this->name << ": " << "Hey, " + Player->name + "!\n";
-		state = idle;
+		cout << name << " has respawned " << endl;
 	}
 };
 
@@ -116,7 +120,8 @@ int main()
 	Maker Make;
 	Player_Class Player("Jessica", "Witch", 6);
 	NPC_Class Janette("Janette", "Rave Girl", 4);
-	
+	NPC_Class Narrator("Narrator", "Narrator", 0);
+
 	Make.Border();
 	Player.Greeting(&Janette);
 	Janette.Greeting(&Player);
@@ -129,34 +134,43 @@ int main()
 	Janette.Attack(&Player);
 
 	Make.Border();
+	Player.Talk(&Janette, "*Giggles* Sorry, I just thought it was funny. I'm still a little buzzed from last night.");
+	Janette.Talk(&Player, "*Janette glares at you with disgust* You bitch, you really went without me?");
+	Narrator.Talk("Janette storms over to the door.");
+	Janette.Talk(&Player, "You're buying coffee this time!");
+	Janette.Respawn();
+
+	Make.Border();
 	system("pause");
 }
 
-Player_Class::Player_Class()
+Maker::Maker()
 {
-	type = ct_player;
-	name = "Player";
-	occupation = "Witch";
-	strength = 6;
+	divider = '-';
+}
+
+Character::Character()
+{
+	type = ct_npc;
+	name = "Character";
+	occupation = "Default Job";
+	health = 100;
+	strength = 5;
+	level = 1;
+	state = idle;
 }
 
 Player_Class::Player_Class(string newName, string newOccupation, int newStrength)
 {
+	type = ct_player;
 	name = newName;
 	occupation = newOccupation;
 	strength = newStrength;
 }
 
-NPC_Class::NPC_Class()
-{
-	type = ct_npc;
-	name = "NPC";
-	occupation = "NPC Worker";
-	strength = 4;
-}
-
 NPC_Class::NPC_Class(string newName, string newOccupation, int newStrength)
 {
+	type = ct_npc;
 	name = newName;
 	occupation = newOccupation;
 	strength = newStrength;

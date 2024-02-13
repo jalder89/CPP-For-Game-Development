@@ -44,4 +44,4 @@ Projects and exercise work while learning C++ for Game Development: https://www.
   Simple practice project practicing with overriding virtual functions from classes.
 
   ### Polymorphism
-  Working
+  Pracicing with polymorphism by storing and access many types of data in an array through the use of pointers and polymorphic inheritance.

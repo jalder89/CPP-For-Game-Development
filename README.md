@@ -28,3 +28,8 @@ Projects and exercise work for learning C++ for Game Development.
   Practice with access modifiers and classes.
   * Implemented Creature and Kobold class.
   * Implemented different public, private, and protected member variables and functions for each class.
+
+  ### Staack & Heap
+  Simple practice project for creating and deleting data dynamically on the heap.
+  * Implemented Character class with consutructor and destructor that dynamically allocates member variables to the heap.
+  * Created and destroyed a new character dynamically on the heap

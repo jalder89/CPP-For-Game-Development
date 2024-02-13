@@ -1,5 +1,5 @@
 # CPP-For-Game-Development
-Projects and exercise work for learning C++ for Game Development.
+Projects and exercise work while learning C++ for Game Development: https://www.udemy.com/course/learn-cpp-for-ue4-unit-1
 
 ## Projects
   ### Guess My Number
@@ -33,8 +33,15 @@ Projects and exercise work for learning C++ for Game Development.
   Simple practice project for creating and deleting data dynamically on the heap.
   * Implemented Character class with consutructor and destructor that dynamically allocates member variables to the heap.
   * Created and destroyed a new character dynamically on the heap
+  
   ### Statics
   Practicing with statics building a simple inventory system.
   * Item class added to allow easy expansion of item support and item details.
   * Inventory class implemented to manage inventory storage and reporting.
   * Storage implemented as a dynamic vector of Items which grows to fit the inventory needs.
+
+  ### Virtual Functions
+  Simple practice project practicing with overriding virtual functions from classes.
+
+  ### Polymorphism
+  Working

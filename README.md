@@ -29,7 +29,12 @@ Projects and exercise work for learning C++ for Game Development.
   * Implemented Creature and Kobold class.
   * Implemented different public, private, and protected member variables and functions for each class.
 
-  ### Staack & Heap
+  ### Stack & Heap
   Simple practice project for creating and deleting data dynamically on the heap.
   * Implemented Character class with consutructor and destructor that dynamically allocates member variables to the heap.
   * Created and destroyed a new character dynamically on the heap
+  ### Statics
+  Practicing with statics building a simple inventory system.
+  * Item class added to allow easy expansion of item support and item details.
+  * Inventory class implemented to manage inventory storage and reporting.
+  * Storage implemented as a dynamic vector of Items which grows to fit the inventory needs.

@@ -43,5 +43,6 @@ Projects and exercise work while learning C++ for Game Development: https://www.
   ### Virtual Functions
   Simple practice project practicing with overriding virtual functions from classes.
 
-  ### Polymorphism
-  Pracicing with polymorphism by storing and access many types of data in an array through the use of pointers and polymorphic inheritance.
+  ### Polymorphism & Casting
+  Practicing with polymorphism and casting by storing and accessing multi-type data via pointers stored within a polymorphic array.
+  * Includes practice with dynamic casting to enable calling unique functions via a polymorphic array based on each elements pointer type.

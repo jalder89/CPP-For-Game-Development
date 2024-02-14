@@ -1,6 +1,12 @@
 # CPP-For-Game-Development
 Projects and exercise work while learning C++ for Game Development: https://www.udemy.com/course/learn-cpp-for-ue4-unit-1
 
+## Final Project
+### Headers
+Combined everything into a test project that utilizes headers to better organize classes. 
+* Implemented very basic character creation system that creates a character with a functional inventory.
+* Implemented very basic inventory system that handles adding, removing, and reporting items.
+
 ## Projects
   ### Guess My Number
   A quick game I put together to practice basics like functions, loops, and IO before starting course on OOP.
